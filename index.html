@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grammar Mission｜連接詞 × 介系詞</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#203d40;background:#f2f6f3;line-height:1.65}*{box-sizing:border-box}body{margin:0}main{max-width:900px;margin:auto;padding:40px 20px}h1{font-size:clamp(30px,6vw,46px);margin:0;color:#153f39}p{margin:8px 0}.eyebrow{letter-spacing:.15em;font-size:12px;color:#53736b;font-weight:700}.muted{color:#58706e;font-size:14px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px}.score{white-space:nowrap;font-weight:700}progress{width:100%;height:10px;accent-color:#28745e;margin:20px 0}nav,.actions{display:flex;flex-wrap:wrap;gap:8px}button{font:inherit;cursor:pointer;border:1px solid #b9cec5;border-radius:12px;padding:10px 16px;background:white;color:#203d40;min-height:46px}button:hover:not(:disabled){background:#e7f1e9}button:focus-visible,textarea:focus-visible{outline:3px solid #d09832;outline-offset:3px}button:disabled{cursor:default;opacity:1}nav button.active,.primary{background:#245f4e;color:white}.card{background:white;border:1px solid #d6e2dc;border-radius:22px;padding:clamp(20px,4vw,36px);margin:20px 0;box-shadow:0 8px 35px #173b2910}h2{font-size:23px;line-height:1.6;margin:20px 0}#answers{display:grid;gap:12px}#answers button{text-align:left;padding:14px 18px}.correct{background:#e3f3e7!important;border-color:#41865a!important}.wrong{background:#fff0ec!important;border-color:#bc6553!important}#feedback{background:#f0f5ef;border-radius:12px;padding:16px;margin:20px 0}.actions{margin-top:24px}.notes{display:grid;grid-template-columns:1fr 1fr;gap:16px}.notes article{background:#e7eee8;border-radius:16px;padding:20px}summary{cursor:pointer;font-weight:700}textarea{width:100%;min-height:120px;padding:14px;border:1px solid #b9cec5;border-radius:12px;font:inherit}[hidden]{display:none!important}@media(max-width:550px){main{padding:25px 16px}.notes{grid-template-columns:1fr}.top{align-items:start}nav button{font-size:13px;padding:8px 10px}}
+</style></head>
+<body><main><div class="eyebrow">ENGLISH PRACTICE · 25–35 MIN</div><div class="top"><div><h1>Grammar Mission</h1><p>Conjunctions × Prepositions｜連接詞與介系詞挑戰</p></div><div id="score" class="score"></div></div><p class="muted">完成五個關卡，閱讀解析，再試著自己造句。每題只計算第一次作答。</p><progress id="progress" value="0" max="28" aria-label="完成進度"></progress><nav aria-label="選擇關卡" id="levels"></nav>
+<section class="card"><div class="top muted"><span id="stage"></span><span id="counter"></span></div><p id="instruction" class="muted"></p><h2 id="question"></h2><div id="answers"></div><div id="feedback" role="status" hidden></div><div class="actions"><button id="prev">← 上一題</button><button id="next" class="primary">下一題 →</button><button id="summary">查看成果</button><button id="restart">重新開始</button></div></section>
+<section id="results" class="card" hidden><h2>練習成果</h2><p id="resultText"></p><div id="review"></div></section>
+<details class="card"><summary>Writing Mission｜自己造句（老師批改）</summary><p class="muted">1. 用 although 與 until 寫一句話。<br>2. 分別用 by Friday 和 until Friday 寫一句話。<br>3. 用 either…or 或 neither…nor 寫一句話。</p><textarea id="writing" aria-label="英文造句" placeholder="Write your sentences here..."></textarea><p class="muted">造句不計入選擇題分數。可截圖交給老師。</p></details>
+<div class="notes"><article><b>Remember: conjunctions</b><p class="muted">and＝而且；but / yet＝但是；or＝或者／否則；so＝所以；because＝因為；unless＝除非（if not）；as long as＝只要；as soon as＝一……就……。since 可指「自從／因為」，依語境判斷。</p></article><article><b>Remember: time</b><p class="muted">at＋時刻；on＋日期／星期；in＋月份／年份。<br>by Friday＝最晚星期五完成。<br>until Friday＝持續到星期五。<br>during＋名詞；while＋主詞＋動詞。</p></article></div><p id="saveNote" class="muted">進度只儲存在這台裝置的此瀏覽器，不會自動傳給老師。</p></main>
+<script>
+'use strict';
+const sets=[
+{name:'Quick Check',inst:'選擇最適合連接兩個想法的字。',qs:[
+['I wanted to go for a walk, ___ it started pouring rain.',['and','but','so'],'but','前後是轉折：想散步，但是下雨了。'],
+['Emma was tired, ___ she went to bed early.',['so','yet','or'],'so','疲倦是原因，早睡是結果；so 引出結果。'],
+['Would you like tea ___ coffee?',['but','or','for'],'or','or 連接兩個選擇：茶或咖啡。'],
+['The restaurant is small, ___ the food is excellent.',['yet','so','because'],'yet','yet 表示出乎預期的轉折，意思接近 but。'],
+['I stayed home ___ I had a lot of homework.',['because','so','and'],'because','because 引出待在家的原因。']]},
+{name:'Meaning Challenge',inst:'讀懂句子關係，再選擇連接詞。',qs:[
+['___ it was raining heavily, they continued playing outside.',['Because','Although','If'],'Although','although＝儘管。雖然下大雨，他們仍繼續玩。'],
+['You can borrow my laptop ___ you return it tonight.',['as long as','even though','unless'],'as long as','as long as＝只要，表示借電腦的條件。'],
+['We will go hiking tomorrow ___ the weather is terrible.',['if','unless','because'],'unless','unless＝除非，也就是 if…not：天氣不糟就去健行。'],
+['Call me ___ you arrive at the station.',['when','although','because'],'when','when 指明動作發生的時間：到車站時打給我。'],
+['I will send you the file ___ I finish checking it.',['as soon as','even though','unless'],'as soon as','as soon as＝一……就……：一檢查完就寄出。']]},
+{name:'Time Detective',inst:'注意時間意義與空格後面的結構。',qs:[
+['The meeting starts ___ 9:30 a.m.',['at','on','in'],'at','具體時刻前使用 at。'],
+['My English class is ___ Friday.',['at','on','in'],'on','星期與日期前使用 on。'],
+['She moved to Taiwan ___ 2024.',['at','on','in'],'in','年份、月份等較長時間前使用 in。'],
+['Please finish the report ___ Friday. It must be ready before the weekend.',['by','until','during'],'by','by Friday＝最晚星期五完成，表示截止期限。'],
+['I will stay here ___ Friday, then I will leave.',['by','until','while'],'until','until 表示待在這裡的狀態持續到星期五。'],
+['Please do not use your phone ___ the meeting.',['during','while','by'],'during','during 後面接名詞：the meeting。'],
+['Please do not use your phone ___ the teacher is speaking.',['during','while','until'],'while','這裡要表達「老師說話期間」；while 後面接主詞＋動詞。until 則會變成「直到老師開始說話前」。']]},
+{name:'Sentence Builder',inst:'選擇符合句意的成對連接詞。',qs:[
+['___ Amy ___ Jason can drive, so we need to take a taxi.',['Both … and','Neither … nor','Either … or'],'Neither … nor','兩人都不會開車，因此需要搭計程車。neither…nor＝既不……也不……。'],
+['You can ___ call me ___ send me a message. Choose just one.',['either … or','neither … nor','both … and'],'either … or','either…or 表達兩個選項擇一。'],
+['She is ___ intelligent ___ hardworking. (她不但聰明，而且勤奮。)',['not only … but also','whether … or','neither … nor'],'not only … but also','not only…but also＝不但……而且……，連接兩個形容詞。'],
+['___ my sister ___ I enjoy cooking together.',['Both … and','Either … or','Whether … or'],'Both … and','both…and 同時包含兩個人：姐姐和我都喜歡一起做菜。'],
+['I have not decided ___ I should study in Taiwan ___ go abroad.',['whether … or','both … and','neither … nor'],'whether … or','whether…or 表示尚未決定的兩種可能。']]},
+{name:'Final Mission',inst:'綜合挑戰：同時檢查句意與文法。',qs:[
+['I was studying ___ my brother was watching TV. (兩件事同時進行。)',['during','while','until'],'while','while 連接同時發生的兩件事，後接主詞＋動詞。'],
+['___ you leave home, check whether you have your keys.',['Before','Until','During'],'Before','先確認鑰匙，再出門：在出門之前，所以用 before。'],
+['We waited ___ 8 p.m., but she never arrived.',['by','until','during'],'until','等待持續到晚上八點，使用 until。'],
+['He went to work ___ he was feeling sick.',['even though','because','so'],'even though','雖然不舒服，仍去上班；even though 表示讓步。'],
+['You will improve ___ you keep practising regularly.',['as long as','although','nor'],'as long as','as long as 表示進步的條件：只要持續規律練習。'],
+['Which sentence is correct?',['During I was studying, my phone rang.','While I was studying, my phone rang.','While my studying, my phone rang.'],'While I was studying, my phone rang.','while＋主詞＋動詞；during 則接名詞，例如 during my study session。']]}];
+const $=id=>document.getElementById(id),all=sets.flatMap((s,l)=>s.qs.map((q,i)=>({q,l,i,key:l+'-'+i}))),total=all.length,storageKey='grammar-mission-v1';
+let level=0,index=0,records={},writing='';
+try{const saved=JSON.parse(localStorage.getItem(storageKey)||'null');if(saved&&saved.records){for(const item of all){const a=saved.records[item.key];if(item.q[1].includes(a))records[item.key]=a;}writing=typeof saved.writing==='string'?saved.writing:'';}}catch(e){$('saveNote').textContent='瀏覽器無法儲存進度；請完成後截圖留存。';}
+function save(){try{localStorage.setItem(storageKey,JSON.stringify({records,writing:$('writing').value}));}catch(e){$('saveNote').textContent='瀏覽器無法儲存進度；請完成後截圖留存。';}}
+function score(){return all.filter(x=>records[x.key]===x.q[2]).length;}
+function stats(){const n=Object.keys(records).length;$('score').textContent=score()+' / '+total+' 分';$('progress').max=total;$('progress').value=n;}
+sets.forEach((s,l)=>{const b=document.createElement('button');b.textContent=(l+1)+' '+s.name;b.onclick=()=>{level=l;index=0;render();};$('levels').appendChild(b);});
+function render(){const s=sets[level],q=s.qs[index],key=level+'-'+index,chosen=records[key];$('stage').textContent='LEVEL '+(level+1)+' · '+s.name;$('counter').textContent=(index+1)+' / '+s.qs.length;$('instruction').textContent=s.inst;$('question').textContent=q[0];$('answers').replaceChildren();q[1].forEach(a=>{const b=document.createElement('button');b.textContent=a;b.disabled=chosen!==undefined;if(chosen!==undefined){if(a===q[2]){b.className='correct';b.textContent='✓ '+a;}else if(a===chosen){b.className='wrong';b.textContent='✗ '+a;}}b.onclick=()=>{if(records[key]!==undefined)return;records[key]=a;save();render();if(!$('results').hidden)results();};$('answers').appendChild(b);});$('feedback').hidden=chosen===undefined;if(chosen!==undefined)$('feedback').textContent=(chosen===q[2]?'✓ 答對了！ ':'✗ 正確答案：'+q[2]+'。 ')+q[3];$('prev').disabled=level===0&&index===0;$('next').textContent=level===sets.length-1&&index===s.qs.length-1?'查看成果 →':'下一題 →';[...$('levels').children].forEach((b,i)=>{b.classList.toggle('active',i===level);b.setAttribute('aria-pressed',String(i===level));});stats();}
+$('next').onclick=()=>{if(index<sets[level].qs.length-1)index++;else if(level<sets.length-1){level++;index=0;}else{results();$('results').scrollIntoView({behavior:'smooth'});return;}render();};
+$('prev').onclick=()=>{if(index>0)index--;else if(level>0){level--;index=sets[level].qs.length-1;}render();};
+function results(){$('results').hidden=false;const done=Object.keys(records).length;$('resultText').textContent='已完成 '+done+' / '+total+' 題；答對 '+score()+' 題。'+(done===total?'完成全部關卡！請回顧錯題並完成造句。':'還有 '+(total-done)+' 題未完成，可切換關卡繼續。');$('review').replaceChildren();all.filter(x=>records[x.key]!==undefined&&records[x.key]!==x.q[2]).forEach(x=>{const d=document.createElement('details'),s=document.createElement('summary'),p=document.createElement('p');s.textContent=x.q[0];p.textContent='你的答案：'+records[x.key]+'｜正確答案：'+x.q[2]+'。'+x.q[3];d.append(s,p);$('review').appendChild(d);});}
+$('summary').onclick=results;$('restart').onclick=()=>{if(!confirm('確定清除全部作答與造句，重新開始嗎？'))return;records={};level=0;index=0;$('writing').value='';save();$('results').hidden=true;render();};$('writing').value=writing;$('writing').addEventListener('input',save);render();
+</script></body></html>
