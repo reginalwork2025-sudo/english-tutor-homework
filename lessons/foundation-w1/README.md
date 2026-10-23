@@ -1,4 +1,4 @@
-# W1｜把單字組成句子
+# Beginner｜W1｜把單字組成句子
 適用：英文基礎起步學生；90 分鐘（60 分鐘教學＋30 分鐘練習）。本課是 12 週地圖的第 1 週，不是學測衝刺課程的 W1。
 學生複習：[15 分鐘小複習](../../review/foundation-w1/index.html)
 
@@ -147,3 +147,19 @@ C：He swims.／She likes music.／They read books.
 - 建議門檻：單字至少 6/8、文法至少 5/6、造句至少 3/4，且能說出誰是主詞，再進 W2。
 - 未達門檻：下堂先用 10–15 分鐘重教錯項；不要直接推進更多動詞變化。
 - 這是教學用觀察，不是標準化英語程度檢定。
+
+
+## Beginner 互動上課版
+[開啟 Beginner-W1.html](https://reginalwork2025-sudo.github.io/english-tutor-homework/lessons/foundation-w1/Beginner-W1.html)
+檔名：Beginner-W1.html；原 Markdown 保留。
+13 頁：暖身、上週回想、三組字卡、主詞、S＋V、S＋V＋O、主詞切換、選學延伸、短讀、引導練習、獨立練習。
+互動版時間：前 9 頁共 55 分鐘；選學延伸 3 分鐘＋短讀 2 分鐘；最後兩頁各 15 分鐘。共 90 分鐘。可省略選學頁，把 3 分鐘用於短讀或原句型複習。
+每頁獨立字詞筆記，保存在同裝置、同瀏覽器；可下載全部筆記，不會跨裝置同步。上課答題與造句不自動保存。
+
+### 選學延伸：名字與兩種 s（3 分鐘）
+- Amy 是一位女生：Amy likes music. → She likes music.
+- Tom 是一位男生：Tom runs. → He runs.
+- Amy and Tom 是兩個人：Amy and Tom read books. → They read books.
+- She reads books.：reads 的 s 配合主詞；books 的 s 表示名詞複數。
+口頭確認：Amy and Tom 配 read 還是 reads？（read）；books 的 s 是名詞複數還是動詞變化？（名詞複數）。
+若學生尚未穩定掌握主詞與動詞，跳過本段，保留至下堂。
