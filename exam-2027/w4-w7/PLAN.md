@@ -66,3 +66,10 @@
 - 如果當堂主教材 60–65 分鐘已完成、學生理解良好，可從 [extra-practice.md](extra-practice.md) 取 **3–5 題** 延伸；若還有錯題未懂，優先把錯題講清楚。
 - W7-2 之後安排 **第 9 堂：總複習**，[grand-review.md](grand-review.md)。這是單獨一堂，不取代課後 15 分鐘的單字／規則測驗。
 - 原本 W4–W7 的課程順序維持不變，每週兩堂各 1.5 小時。總複習可安排在下一個可上課時段。
+
+
+## 90 分鐘總複習｜正式上課教材
+
+- [學生版講義（不含答案）](grand-review-student.md)
+- [教師版教案、答案及補救策略](grand-review-teacher.md)
+- 原先的 [grand-review.md](grand-review.md) 保留為備用總複習題庫。
