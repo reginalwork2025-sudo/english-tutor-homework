@@ -73,3 +73,22 @@
 - [學生版講義（不含答案）](grand-review-student.md)
 - [教師版教案、答案及補救策略](grand-review-teacher.md)
 - 原先的 [grand-review.md](grand-review.md) 保留為備用總複習題庫。
+
+
+## W4–W7 正式 90 分鐘教材索引（學生／教師分開）
+
+| 堂次 | 主題 | 學生講義 | 教師講義（含解析） |
+|---|---|---|---|
+| W4-1 | 詞彙題｜詞性與上下文 | [學生版](w4-1-student.md) | [教師版](w4-1-teacher.md) |
+| W4-2 | 綜合測驗｜轉折、因果與指涉 | [學生版](w4-2-student.md) | [教師版](w4-2-teacher.md) |
+| W5-1 | 文意選填｜先判詞性 | [學生版](w5-1-student.md) | [教師版](w5-1-teacher.md) |
+| W5-2 | 文意選填｜搭配詞與前後句 | [學生版](w5-2-student.md) | [教師版](w5-2-teacher.md) |
+| W6-1 | 篇章結構｜指示詞與段落承接 | [學生版](w6-1-student.md) | [教師版](w6-1-teacher.md) |
+| W6-2 | 篇章結構｜轉折、例證與結果 | [學生版](w6-2-student.md) | [教師版](w6-2-teacher.md) |
+| W7-1 | 閱讀測驗｜主旨與細節定位 | [學生版](w7-1-student.md) | [教師版](w7-1-teacher.md) |
+| W7-2 | 閱讀測驗｜推論與作者態度 | [學生版](w7-2-student.md) | [教師版](w7-2-teacher.md) |
+
+- 每堂 5 個主題單字、1 篇原創帶讀短文、4 題閱讀理解、6 題題型練習和 2 個輸出任務。
+- [15 分鐘互動複習](review.html) 延用原先 W4–W7 對應堂次，使用後由學生截圖成績回報。
+- [總複習學生版](grand-review-student.md)／[總複習教師版](grand-review-teacher.md)。
+- 原本 [lessons.md](lessons.md) 仍留存作為簡易教師備課提綱。
