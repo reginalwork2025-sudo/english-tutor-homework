@@ -26,4 +26,4 @@ self-learning/
 - [Beginner W1 複習](review/foundation-w1/index.html)
 - [原有練習首頁](index.html)
 
-> 搬遷尚未完成時，舊路徑保持可用，避免現有教材失效。
+> Beginner W1 已複製到新目錄，舊路徑暫時保留。Self Learning 的 Whale Falls 與共用單字銀行已建立。
