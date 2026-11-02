@@ -59,3 +59,17 @@
 - 課後 [review.html](review.html) 選 W5-2，看單字 /5 與規則 /3；由學生截圖回報，不自動上傳成績。
 
 **注意：** 這些為原創教學練習，不是學測正式試題；答案依當題語境判斷，避免過度教成毫無例外的文法公式。
+
+
+## W5 新增 Grammar：that 名詞子句（約 5–10 分鐘）
+
+核心例句：
+- **I think that this method is useful.** said / think / believe 等動詞後可接 that 引導的名詞子句；整段作受詞。
+- **The students believed that the club could succeed.** 找出兩組主詞與動詞：The students / believed；the club / could succeed。
+- **Their first challenge was finding a room.** 順帶複習 W5-1 動名詞作主詞補語。
+
+教學簡化：**S + think / say / believe + (that) + S + V**。在這類受詞子句中 that 常可省略，但先讓學生看得出完整子句範圍。
+
+**過去完成式暫緩至 W9 以後**。若課文遇到 had + Vpp，只需給語意提示，不在 W5 做時態完整教學。
+
+互動課：[本週網頁](index.html)，新的 W5-2 題目包含 **believed that**。
