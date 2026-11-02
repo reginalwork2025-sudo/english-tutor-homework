@@ -59,3 +59,15 @@
 - 課後 [review.html](review.html) 選 W5-1，看單字 /5 與規則 /3；由學生截圖回報，不自動上傳成績。
 
 **注意：** 這些為原創教學練習，不是學測正式試題；答案依當題語境判斷，避免過度教成毫無例外的文法公式。
+
+
+## W5 新增 Grammar：Gerund 動名詞（約 5–10 分鐘）
+
+核心例句：
+- **Reading every day is helpful.** Reading every day 是動名詞片語作主詞。
+- **She improved by reading short stories.** by 是介系詞，後接動名詞 reading。
+- **After finishing the book, she wrote a summary.** after + 動名詞片語。
+
+請學生先找主句動詞，再說明 reading / finishing 為何不是主要謂語動詞。若她無法區分，先用短句 **Reading is fun.** 和 **She is reading.** 比較動名詞與進行式。這裡只需認識最基本的名詞功能，不必延伸到複雜動名詞與不定詞區別。
+
+互動課：[本週網頁](index.html)，新的 W5-1 題目包含 **by reading**。
