@@ -1,14 +1,20 @@
 # English Tutor Homework｜教材首頁
 
-依學習程度及用途分成三區：
+依學習程度及用途分成四區：
 
 - [Exam 2027](exam-2027/w4-w7/README.md) — Joey / B Level；學測英文 W4–W7
 - [Beginner](beginner/README.md) — Stacy / A Level；課程與複習
 - [Self Learning](self-learning/README.md) — 自主學習與 B+–C Level；文章精讀、單字銀行
 
+- [Speaking Lab｜口說專區](speaking/index.html) — 共用口說練習；[10 分鐘自我介紹](speaking/self-introduction/index.html)
+
 ## 目標結構
 
 ```text
+speaking/                  # 共用口說專區
+  index.html               # 口說教材入口
+  self-introduction/
+    index.html             # 10 分鐘自我介紹互動課
 exam-2027/                 # Joey / B Level
 beginner/
   lessons/                 # Stacy / A Level
