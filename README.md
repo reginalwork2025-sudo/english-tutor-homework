@@ -33,3 +33,5 @@ self-learning/
 - [原有練習首頁](index.html)
 
 > Beginner W1 已複製到新目錄，舊路徑暫時保留。Self Learning 的 Whale Falls 與共用單字銀行已建立。
+
+- [Business Speaking Lab｜商業口說複習室](self-learning/business-speaking/index.html)
