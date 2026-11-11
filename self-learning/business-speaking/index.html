@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Business Speaking Lab｜商業口說</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#203542;background:#f4f7f8;line-height:1.65}*{box-sizing:border-box}body{margin:0}main{max-width:1000px;margin:auto;padding:28px 18px 70px}header{background:#163c4b;color:#fff;border-radius:22px;padding:28px}header a{color:#bfe9ed}h1{font-size:clamp(27px,5vw,42px);margin:8px 0}h2{margin:0 0 12px;font-size:22px}h3{margin:0 0 8px}.muted{color:#5a737f}.eyebrow{font-size:12px;letter-spacing:.15em;font-weight:700;color:#a5d9df}.card{background:#fff;border:1px solid #d9e4e9;border-radius:18px;padding:22px;margin-top:18px;box-shadow:0 6px 22px #193f4a0a}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}button,select{font:inherit;border:1px solid #a9c1ca;border-radius:10px;padding:10px 14px;background:#fff;color:#173e4a;cursor:pointer}button:hover{background:#eaf4f5}button.primary{background:#176879;color:white;border-color:#176879}button:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #d8a84d;outline-offset:2px}textarea{width:100%;min-height:115px;resize:vertical;font:inherit;padding:12px;border:1px solid #b5cbd1;border-radius:12px}details{border-top:1px solid #e1e8ec;padding:12px 0}summary{cursor:pointer;font-weight:600}blockquote{margin:12px 0;border-left:4px solid #47a3a8;padding:10px 16px;background:#eef7f7}small{color:#617a85}progress{width:100%;height:12px;accent-color:#176879}.pill{display:inline-block;background:#e6f2f3;color:#176879;border-radius:99px;padding:3px 10px;font-size:12px;font-weight:700}.prompt{font-size:20px;font-weight:650;line-height:1.5}.timer{font-size:32px;font-weight:700;font-variant-numeric:tabular-nums}.sentence{padding:13px 0;border-top:1px solid #e6edef}.hidden{display:none}.footer{font-size:13px;margin-top:18px}@media(max-width:700px){.grid{grid-template-columns:1fr}.card{padding:17px}header{padding:22px}}
+</style></head><body><main>
+<header><div class="eyebrow">SELF LEARNING / BUSINESS SPEAKING</div><h1>Business Speaking Lab<br>商業口說複習室</h1><p>為 P&G Behavioral Interview 與 B2B 商業溝通設計：先回想、再說出來、最後檢查。</p><a href="../README.md">← Self Learning</a></header>
+<section class="card"><div class="row" style="justify-content:space-between"><h2>今日 30 分鐘複習</h2><span id="progressText" class="pill">0 / 4</span></div><progress id="progress" value="0" max="4"></progress><div id="routine"></div><button id="resetDay">重設今日勾選</button><small>勾選與筆記儲存在目前瀏覽器，並不會上傳到 GitHub。</small></section>
+<section class="card"><h2>01｜中文 → 英文：主動回想</h2><p class="muted">先看中文，在 5 秒內說出英文，再展開答案。不要只閱讀答案。</p><div class="row"><button id="shuffle">隨機換順序</button><button id="hideAll">隱藏全部答案</button><span id="recallStatus" class="muted"></span></div><div id="sentences"></div></section>
+<section class="card"><h2>02｜句型替換訓練</h2><p>選一個句型，口頭替換三種工作情境；每次先說結論。</p><select id="patternSelect" aria-label="選擇句型"></select><blockquote id="patternText"></blockquote><div id="patternPrompts"></div><textarea id="patternNotes" placeholder="寫下你自己造的句子（可選）"></textarea></section>
+<section class="card"><h2>03｜舊題重答 / 即興口說</h2><div class="row"><select id="questionSelect" aria-label="選擇面試題"></select><button id="randomQuestion">隨機抽題</button></div><p id="question" class="prompt"></p><p id="questionZh" class="muted"></p><div class="row"><span id="timer" class="timer">00:00</span><button id="startTimer" class="primary">開始計時</button><button id="stopTimer">停止</button><button id="resetTimer">歸零</button></div><p class="muted">建議 30–60 秒；行為題可延長至 90 秒。錄音請使用手機錄音工具，或在支援的瀏覽器嘗試下方語音轉文字。</p><div class="row"><button id="speechStart">開始語音轉文字（選用）</button><button id="speechStop">停止辨識</button><span id="speechStatus" class="muted" role="status"></span></div><textarea id="answer" placeholder="輸入或貼上自己的英文回答；語音辨識可能不準確，請自行核對。"></textarea><details><summary>回答檢查清單</summary><label><input type="checkbox" class="checkAnswer"> 第一個句子直接回答問題</label><br><label><input type="checkbox" class="checkAnswer"> 清楚說明理由或證據</label><br><label><input type="checkbox" class="checkAnswer"> 有下一步或實際成果</label><br><label><input type="checkbox" class="checkAnswer"> 沒有把假設說成已證實的事實</label></details></section>
+<section class="card"><h2>04｜個人錯題本</h2><p class="muted">每次最多記錄 3 個真正影響理解的錯誤。下次練習先回想修正版。</p><div id="mistakes"></div><button id="addMistake">新增錯誤</button><div class="row" style="margin-top:15px"><button id="export">匯出練習紀錄 JSON</button><button id="clearNotes">清除本機筆記</button></div><small>請勿在公開 GitHub 儲存含有客戶名稱、個資或商業機密的內容。</small></section>
+<p class="footer muted">學習原則：30% 新題、70% 複習與重答。Day 1 → Day 2 → Day 3 → Day 7 → Day 14 間隔複習。語音辨識依瀏覽器支援及權限而定。</p>
+</main><script>
+const KEY="business-speaking-lab-v1";
+const data={routine:["5 分鐘｜不看答案回想昨天的錯誤","10 分鐘｜句型替換（3 個句型 × 3 個情境）","10 分鐘｜抽舊題錄音重答","5 分鐘｜回聽並記錄最多 3 個錯誤"],sentences:[
+["我會先確認客戶的主要顧慮。","I'd first clarify the client's main concerns."],
+["我不會立即建議增加預算。","I wouldn't recommend increasing the budget immediately."],
+["我會先找出問題的原因。","I'd first identify the cause of the problem."],
+["我親自確認這些調整已經執行。","I verified that the changes had been implemented."],
+["我說服客戶測試一個新的廣告方案。","I persuaded the client to test a new advertising approach."],
+["如果成效符合目標，我會建議逐步增加預算。","If the results meet our targets, I'd recommend gradually increasing the budget."],
+["我會先比較潛在客戶的品質。","I'd first compare the lead quality."],
+["我建議用不到總預算 10% 的金額測試。","I proposed a test budget of less than 10% of the total budget."],
+["我使用兩項證據支持我的建議。","I used two pieces of evidence to support my recommendation."],
+["我會先了解對方不同意的原因。","I'd first understand why they disagree."]
+],patterns:[
+["I'd first + 動詞","先做什麼？",["clarify the client's concerns","review the performance data","identify the main issue"]],
+["I wouldn't recommend + V-ing","先不做什麼？",["increasing the budget immediately","offering a discount without approval","scaling up before reviewing lead quality"]],
+["If + 現在式, I'd + 動詞","什麼條件下採取行動？",["If the results meet our targets, I'd scale up gradually.","If the client is concerned about cost, I'd propose a small test.","If the data is unclear, I'd investigate further."]],
+["I + 過去式","描述真正做過的事",["I introduced a task log.","I verified the changes.","I persuaded the client to run a test."]]
+],questions:[
+["Would you scale up a campaign if it generated more leads but had a higher CPL?","Leads 更多但 CPL 較高，你會擴量嗎？"],
+["Would you recommend increasing the budget by 50% if performance was unstable?","成效不穩定，客戶想增加 50% 預算，你會怎麼做？"],
+["Tell me about a time you persuaded someone who initially disagreed with you.","分享一次你說服反對者的經驗。"],
+["How did you make sure the team followed your recommendations?","你如何確認團隊真的執行建議？"],
+["What specific evidence did you use to convince the client?","你用了哪些證據說服客戶？"],
+["How did you decide on the test budget?","你如何決定測試預算？"],
+["Tell me about a challenging problem you solved at work.","分享一次你解決困難問題的經驗。"],
+["What was your personal contribution to the project?","你個人對專案的貢獻是什麼？"]
+]};
+let state;try{state=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){state={}};state={routine:[],notes:"",answer:"",mistakes:[],...state};
+const $=id=>document.getElementById(id);const save=()=>localStorage.setItem(KEY,JSON.stringify(state));
+function routine(){ $("routine").innerHTML="";data.routine.forEach((x,i)=>{const l=document.createElement("label");l.style.display="block";l.style.padding="8px 0";const c=document.createElement("input");c.type="checkbox";c.checked=state.routine.includes(i);c.onchange=()=>{state.routine=c.checked?[...state.routine,i]:state.routine.filter(n=>n!==i);save();progress()};l.append(c,document.createTextNode(" "+x));$("routine").append(l)});progress()}
+function progress(){$("progress").value=state.routine.length;$("progressText").textContent=state.routine.length+" / 4"}
+let order=data.sentences.map((_,i)=>i),shown=new Set();
+function renderSentences(){$("sentences").innerHTML="";order.forEach(i=>{const x=data.sentences[i],wrap=document.createElement("div");wrap.className="sentence";const zh=document.createElement("div");zh.textContent=x[0];const b=document.createElement("button");b.textContent=shown.has(i)?"隱藏答案":"說完後查看答案";b.style.marginTop="8px";const en=document.createElement("div");en.className="muted";en.style.marginTop="6px";en.textContent=x[1];en.hidden=!shown.has(i);b.onclick=()=>{shown.has(i)?shown.delete(i):shown.add(i);renderSentences()};wrap.append(zh,b,en);$("sentences").append(wrap)});$("recallStatus").textContent="已展開 "+shown.size+" / "+data.sentences.length}
+function pattern(){const x=data.patterns[+$("patternSelect").value];$("patternText").textContent=x[0]+"｜"+x[1];$("patternPrompts").innerHTML="";x[2].forEach(t=>{const p=document.createElement("p");p.textContent="• "+t;$("patternPrompts").append(p)})}
+function question(){const x=data.questions[+$("questionSelect").value];$("question").textContent=x[0];$("questionZh").textContent=x[1];state.question=+$("questionSelect").value;save()}
+function mistakes(){$("mistakes").innerHTML="";state.mistakes.forEach((m,i)=>{const d=document.createElement("div");d.className="grid";d.style.marginBottom="10px";["原本說法","修正後句子"].forEach((label,k)=>{const t=document.createElement("textarea");t.style.minHeight="70px";t.placeholder=label;t.value=m[k]||"";t.oninput=()=>{state.mistakes[i][k]=t.value;save()};d.append(t)});const del=document.createElement("button");del.textContent="刪除這筆";del.onclick=()=>{state.mistakes.splice(i,1);save();mistakes()};const box=document.createElement("div");box.append(d,del);box.style.marginBottom="16px";$("mistakes").append(box)})}
+$("resetDay").onclick=()=>{state.routine=[];save();routine()};$("shuffle").onclick=()=>{order.sort(()=>Math.random()-.5);renderSentences()};$("hideAll").onclick=()=>{shown.clear();renderSentences()};
+data.patterns.forEach((p,i)=>$("patternSelect").add(new Option("句型 "+(i+1)+"｜"+p[0],i)));$("patternSelect").onchange=pattern;$("patternNotes").value=state.notes;$("patternNotes").oninput=e=>{state.notes=e.target.value;save()};
+data.questions.forEach((q,i)=>$("questionSelect").add(new Option("題目 "+(i+1),i)));$("questionSelect").value=state.question||0;$("questionSelect").onchange=question;$("randomQuestion").onclick=()=>{$("questionSelect").value=Math.floor(Math.random()*data.questions.length);question()};
+$("answer").value=state.answer;$("answer").oninput=e=>{state.answer=e.target.value;save()};$("addMistake").onclick=()=>{if(state.mistakes.length>=30){alert("最多保留 30 筆，請先整理舊錯誤。");return}state.mistakes.push(["",""]);save();mistakes()};
+$("export").onclick=()=>{const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),...state},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="business-speaking-review.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+$("clearNotes").onclick=()=>{if(!confirm("確定清除本機回答、句型筆記與錯題？"))return;state.notes="";state.answer="";state.mistakes=[];save();$("patternNotes").value="";$("answer").value="";mistakes()};
+let elapsed=0,interval=null;function tick(){$("timer").textContent=String(Math.floor(elapsed/60)).padStart(2,"0")+":"+String(elapsed%60).padStart(2,"0")};$("startTimer").onclick=()=>{if(interval)return;interval=setInterval(()=>{elapsed++;tick()},1000)};$("stopTimer").onclick=()=>{clearInterval(interval);interval=null};$("resetTimer").onclick=()=>{clearInterval(interval);interval=null;elapsed=0;tick()};
+const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;let recognition=null;
+$("speechStart").onclick=()=>{if(!SpeechRecognition){$("speechStatus").textContent="此瀏覽器不支援語音辨識，請使用錄音工具。";return}recognition=new SpeechRecognition();recognition.lang="en-US";recognition.continuous=true;recognition.interimResults=false;recognition.onresult=e=>{let text="";for(let i=e.resultIndex;i<e.results.length;i++)if(e.results[i].isFinal)text+=e.results[i][0].transcript+" ";$("answer").value+=text;state.answer=$("answer").value;save()};recognition.onerror=e=>$("speechStatus").textContent="辨識失敗："+e.error;recognition.onend=()=>$("speechStatus").textContent="已停止";try{recognition.start();$("speechStatus").textContent="正在辨識（可能使用瀏覽器服務）"}catch(e){$("speechStatus").textContent="無法啟動："+e.message}};
+$("speechStop").onclick=()=>recognition?.stop();
+routine();renderSentences();pattern();question();mistakes();
+</script></body></html>
